@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+
+<div id="menu">
+<ul>
+
+ <a href="/autobuses/contacto.html"><li id="contac">Contacto</li></a>
+  <a href="/autobuses/index.html"><li id="inicio">INICIO</li></a>
+ <a href="/autobuses/acerca.html"><li id="cerca">Acerca de</li></a>
+
+</ul>
+</div>
+
+<div id="logo">
+	<a href="/autobuses/index.html"><img src="buse.png" width="200px" height="64px" alt=""/></a>
+</div>
+
+<hr id="barra">
+<header>
+<h1 class="titulo">Bus<span>Help</span></h1>
+</header>
+
+<form class="contact_form" action="contacto.php" method="post">
+
+<table>
+<tr>
+<td>Nombre</td>
+<td><input name="nombre" class="formos" type="text" required id="nombre"  placeholder="Borja Perez" /></td>
+</tr>
+
+<tr>
+<td>Email</td>
+ <td><input type="email"  class="formos" name="email" placeholder="borja@ejemplo.com" required /></td>
+</tr>
+<tr>
+<td>Mensaje</td>
+  <td><textarea name="mensaje"  class="area" cols="40" rows="6" required id="mensaje" ></textarea></td>
+  </tr>
+  </table>
+<button class="submit" type="submit">Enviar</button>
+  
+</form>
+
+
+
+<img src="nevada.jpg" id="video_background" alt=""/>
+
+
+</body>
+</html>

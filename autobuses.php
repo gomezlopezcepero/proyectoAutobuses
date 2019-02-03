@@ -6,16 +6,6 @@
       #map { height: 70%;
 	  width: 70%; }
     </style>
-    
-    <script type="text/javascript">
-    var int=self.setInterval("refresh()",60000);
-    function refresh()
-    {
-        location.reload(true);
-    }
-</script>
-    
-    
     <script type="text/javascript">
 
 function vibrar(){
@@ -55,8 +45,6 @@ function toggleBounce() {
   
   <?php
   
-  //saca la hora actual y la ajusta
-  
   $hora =date("Hi");
   $result = 0;
   
@@ -69,12 +57,10 @@ function toggleBounce() {
   
   echo "<p>" . $hora . "</p>";
   
-  //conectar la base de datos
-  
 $servername = "127.0.0.1";
-$username = "root";
-$password = "trebujena";
-$dbname = "autobuses";
+$username = "u322935431_paco";
+$password = "123amatar";
+$dbname = "u322935431_usuar";
 
 
 // Create connection
@@ -85,7 +71,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }     
      
-//compara la hora actual con la tabla de la base de datos de los horarios de los autobuses, si la resta entre la hora del sistema y de la hora del autobus está entre 0 y 20 (minutos que dura el recorrido), deja pasar 
+
 
 $cont=0;
 
@@ -93,7 +79,7 @@ $rs=mysqli_query($conn,"select * from jereztrebujena") or
   die("Problemas en el select:".mysqli_error($conexion)); 
 while ($reg=mysqli_fetch_array($rs))
 {
-	
+	echo "<p>" . $reg['horario'] . "</p>";
 	if($hora - $reg['horario'] < 21 && $hora - $reg['horario'] > -1){
 		$cont++;
 		
@@ -107,8 +93,7 @@ if($cont==0){
 	?>
     
     <?php
-
-//en caso de que el resultado no coincida con los horarios de llegada, prueba con los horarios de salida	
+	
 	
 	$cont2=0;
 	$result2=0;
@@ -124,8 +109,6 @@ while ($reg=mysqli_fetch_array($rs))
 	}
 
 }
-
-//si no estás dentro de los horarios ni de llegada ni de salida pinta un mapa vacío
 
 if($cont2==0){
 	echo "<p>No hay ningún autobús en circulación en este momento</p>";
@@ -171,7 +154,7 @@ function initMap() {
     
     <?php
 	
-//coge el resultado de la resta de la hora del sistema y de la tabla de horarios y dependiendo del minuto resultante pinta el marcador en una coordenada	
+	
 	
 }	
 else{
